@@ -1,0 +1,31 @@
+{
+    "query": {
+        "bool": {
+            "filter": [
+                {
+                    "match": {
+                        "protocols": "eth:ethertype:ip:tcp"
+                    }
+                },
+                {
+                    "match": {
+                        "ip_src": "10.0.1.11"
+                    }
+                },
+                {
+                    "match": {
+                        "ip_dst": "10.0.10.42"
+                    }
+                },
+                {
+                  "range":{
+                    "time_epoch":{
+                      "gt":"1577067450.375399050‬",
+                      "lt":"1577067450.400000000"
+                    }
+                  }
+                }
+            ]
+        }
+    }
+}
